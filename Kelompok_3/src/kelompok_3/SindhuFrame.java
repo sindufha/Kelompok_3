@@ -55,7 +55,7 @@ public class SindhuFrame extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(153, 153, 153));
         jLabel5.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kelompok_3/Foto ijazah sindhu (2).jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kelompok_3/Sindhu.jpg"))); // NOI18N
         jLabel5.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

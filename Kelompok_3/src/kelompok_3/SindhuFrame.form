@@ -135,7 +135,7 @@
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/kelompok_3/Foto ijazah sindhu (2).jpg"/>
+              <Image iconType="3" name="/kelompok_3/Sindhu.jpg"/>
             </Property>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
