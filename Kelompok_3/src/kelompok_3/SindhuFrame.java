@@ -15,6 +15,9 @@ public class SindhuFrame extends javax.swing.JFrame {
      */
     public SindhuFrame() {
         initComponents();
+        debugImageLocation();
+        foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kelompok_3/Sindhu.jpg")));
+        System.out.println(getClass().getResource("/kelompok_3/Sindhu.jpg"));
     }
 
     /**
@@ -31,7 +34,7 @@ public class SindhuFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        foto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,9 +56,9 @@ public class SindhuFrame extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Github : github.com/sindufha");
 
-        jLabel5.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel5.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel5.setOpaque(true);
+        foto.setBackground(new java.awt.Color(153, 153, 153));
+        foto.setForeground(new java.awt.Color(0, 102, 102));
+        foto.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,7 +72,7 @@ public class SindhuFrame extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
         jPanel1Layout.setVerticalGroup(
@@ -87,7 +90,7 @@ public class SindhuFrame extends javax.swing.JFrame {
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
 
@@ -104,7 +107,46 @@ public class SindhuFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+private void debugImageLocation() {
+    // Debug 1: Print class location
+    System.out.println("Class location: " + getClass().getProtectionDomain().getCodeSource().getLocation());
+    System.out.println("Class name: " + getClass().getName());
+    System.out.println("Package: " + getClass().getPackage().getName());
+    
+    // Debug 2: List semua resources di package
+    try {
+        java.net.URL packageURL = getClass().getResource("");
+        if (packageURL != null) {
+            System.out.println("Package URL: " + packageURL);
+            
+            // List files di package (kalau bisa)
+            java.io.File packageDir = new java.io.File(packageURL.toURI());
+            if (packageDir.exists() && packageDir.isDirectory()) {
+                System.out.println("Files in package:");
+                for (String file : packageDir.list()) {
+                    System.out.println("  - " + file);
+                }
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    
+    // Debug 3: Test berbagai path
+    String[] paths = {
+        "sindhu.jpg",
+        "Sindhu.jpg", 
+        "/kelompok_3/sindhu.jpg",
+        "/kelompok_3/Sindhu.jpg",
+        "kelompok_3/sindhu.jpg",
+        "../sindhu.jpg"
+    };
+    
+    for (String path : paths) {
+        java.net.URL url = getClass().getResource(path);
+        System.out.println("Testing path '" + path + "': " + (url != null ? "FOUND - " + url : "NOT FOUND"));
+    }
+}
     /**
      * @param args the command line arguments
      */
@@ -141,11 +183,11 @@ public class SindhuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel foto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
